@@ -17,6 +17,7 @@ async function agregarDatoUsuario(frase, reaccion, colorfondo, colorLetra, ip) {
       colorfondo,
       colorLetra,
       ip,
+      sexo,
       //cantidadClicks,
     });
     
