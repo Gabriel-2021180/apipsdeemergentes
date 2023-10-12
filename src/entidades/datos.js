@@ -10,6 +10,7 @@ const DatosUsu = new Schema({
   ip: { type: String, required: true },
   //cantidadClicks:{type: Number, required: true},
   estado: { type: Boolean, required: true, default: true },
+  sexo: {type:String,required:true},
   createdAt: { type: Date, default: Date.now() },
 });
 
