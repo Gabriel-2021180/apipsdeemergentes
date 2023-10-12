@@ -1,8 +1,5 @@
 const ObjectPersonDAL = require('../DAL/objectperson');
 
-// Función para agregar un nuevo dato de usuario en la lógica de negocios
-
-
 exports.datosAgregados = async (frase, reaccion, colorfondo, colorLetra, ip) => {
     
   try {
@@ -14,10 +11,11 @@ exports.datosAgregados = async (frase, reaccion, colorfondo, colorLetra, ip) => 
       ip,
       //cantidadClicks,
     );
-
+    
     return resultado;
   } catch (error) {
-    throw error;
+    // La excepción de la DAL se propaga a la lógica de negocios
+    return error.message;
   }
 };
 
