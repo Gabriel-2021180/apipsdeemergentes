@@ -8,6 +8,7 @@ exports.datosAgregados= async (req, res) => {
       colorfondo,
       colorLetra,
       ip,
+      sexo,
       //cantidadClicks,
     } = req.body;
 
@@ -19,6 +20,7 @@ exports.datosAgregados= async (req, res) => {
         colorfondo,
         colorLetra,
         ip,
+        sexo,
         //cantidadClicks,
       );
 
