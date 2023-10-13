@@ -1,7 +1,7 @@
 const DatosUsuario = require('../entidades/datos');
 
 // Función para agregar un nuevo dato de usuario en objectperson.js
-async function agregarDatoUsuario(frase, reaccion, colorfondo, colorLetra, ip) {
+async function agregarDatoUsuario(frase, reaccion, colorfondo, colorLetra, ip,sexo) {
     
   try {
     // Verifica si la IP está registrada más de 3 veces

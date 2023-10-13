@@ -1,6 +1,6 @@
 const ObjectPersonDAL = require('../DAL/objectperson');
 
-exports.datosAgregados = async (frase, reaccion, colorfondo, colorLetra, ip) => {
+exports.datosAgregados = async (frase, reaccion, colorfondo, colorLetra, ip,sexo) => {
     
   try {
     const resultado = await ObjectPersonDAL.agregarDatoUsuario(
