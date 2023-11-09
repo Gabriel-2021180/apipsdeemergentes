@@ -1,5 +1,5 @@
 const LogicaNegocios = require('../Logica De Negocio/datosLN');
-
+const resultados = require('../Logica De Negocio/resultadosLN');
 exports.datosAgregados= async (req, res) => {
     
   const {
