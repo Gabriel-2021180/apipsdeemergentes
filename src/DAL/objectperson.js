@@ -4,12 +4,7 @@ const DatosUsuario = require('../entidades/datos');
 async function agregarDatoUsuario(frase, reaccion, colorfondo, colorLetra, ip,sexo) {
     
   try {
-    // Verifica si la IP está registrada más de 3 veces
-    const cantidadRegistros = await verificarRegistrosIP(ip);
     
-    if (cantidadRegistros > 3) {
-      return 'demasiados intentos';
-    }
 
     const nuevoDatoUsuario = new DatosUsuario({
       frase,
