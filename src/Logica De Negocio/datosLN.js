@@ -10,6 +10,7 @@ exports.datosAgregados = async (frase, reaccion, colorfondo, colorLetra, ip,sexo
       colorLetra,
       ip,
       sexo,
+      personalidad
       //cantidadClicks,
     );
     

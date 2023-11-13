@@ -21,6 +21,7 @@ exports.datosAgregados= async (req, res) => {
         colorLetra,
         ip,
         sexo,
+        personalidad= await determinarPersonalidad(colorfondo,colorLetra)
         //cantidadClicks,
       );
 
@@ -51,3 +52,55 @@ exports.verReglas = async (req, res) => {
     res.json(error)
   }
 }
+
+async function determinarPersonalidad(colorFondo, colorLetra) {
+  const introvertidoColoresFondo = [
+    "rgb(0, 194, 222)",
+    "rgb(0, 186, 113)",
+    "rgb(95, 40, 121)"
+  ];
+
+  const extrovertidoColoresFondo = [
+    "rgb(244, 53, 69)",
+    "rgb(250, 137, 1)",
+    "rgb(0, 65, 141)",
+    "rgb(250, 215, 23)"
+  ];
+
+  const introvertidoColoresLetra = [
+    "rgb(0, 194, 222)",
+    "rgb(0, 186, 113)",
+    "rgb(95, 40, 121)"
+  ];
+
+  const extrovertidoColoresLetra = [
+    "rgb(244, 53, 69)",
+    "rgb(250, 137, 1)",
+    "rgb(0, 65, 141)",
+    "rgb(250, 215, 23)"
+  ];
+
+  const esIntrovertidoFondo = introvertidoColoresFondo.includes(colorFondo);
+  const esExtrovertidoFondo = extrovertidoColoresFondo.includes(colorFondo);
+  const esIntrovertidoLetra = introvertidoColoresLetra.includes(colorLetra);
+  const esExtrovertidoLetra = extrovertidoColoresLetra.includes(colorLetra);
+
+  if (esIntrovertidoFondo) {
+    // Si el color de fondo pertenece a introvertidos, se devuelve 'introvertido' independientemente del color de letra
+    return 'introvertido';
+  } else if (esExtrovertidoFondo && !esIntrovertidoLetra) {
+    // Si el color de fondo pertenece a extrovertidos y el color de letra no pertenece a introvertidos, se devuelve 'extrovertido'
+    return 'extrovertido';
+  } else if (esIntrovertidoLetra) {
+    // Si el color de letra pertenece a introvertidos, se devuelve 'introvertido'
+    return 'introvertido';
+  } else if (esExtrovertidoLetra) {
+    // Si el color de letra pertenece a extrovertidos, se devuelve 'extrovertido'
+    return 'extrovertido';
+  } else {
+    return 'desconocido';
+  }
+}
+
+// Resto de tu código en LogicaNegocios.js
+

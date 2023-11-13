@@ -7,6 +7,7 @@ async function agregarDatoUsuario(
   colorfondo,
   colorLetra,
   ip,
+  personalidad,
   sexo
 ) {
   try {
@@ -17,6 +18,7 @@ async function agregarDatoUsuario(
       colorLetra,
       ip,
       sexo,
+      personalidad
       //cantidadClicks,
     });
     nuevoDatoUsuario.createdAt =  await getRandomDate();
