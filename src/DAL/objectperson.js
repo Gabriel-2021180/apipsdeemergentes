@@ -1,12 +1,16 @@
-const DatosUsuario = require('../entidades/datos');
+const DatosUsuario = require("../entidades/datos");
 
 // Función para agregar un nuevo dato de usuario en objectperson.js
-async function agregarDatoUsuario(frase, reaccion, colorfondo, colorLetra, ip,sexo) {
-    
+async function agregarDatoUsuario(
+  frase,
+  reaccion,
+  colorfondo,
+  colorLetra,
+  ip,
+  sexo
+) {
   try {
-    
-
-    const nuevoDatoUsuario = new DatosUsuario({
+    var nuevoDatoUsuario = new DatosUsuario({
       frase,
       reaccion,
       colorfondo,
@@ -15,19 +19,35 @@ async function agregarDatoUsuario(frase, reaccion, colorfondo, colorLetra, ip,se
       sexo,
       //cantidadClicks,
     });
-    
+    nuevoDatoUsuario.createdAt =  await getRandomDate();
+
     const resultado = await nuevoDatoUsuario.save();
-    
+
     if (resultado) {
-      
-      return '¡Registro guardado correctamente!';
+      return "¡Registro guardado correctamente!";
     } else {
-    
-      return 'Ocurrió un error al guardar el registro.';
+      return "Ocurrió un error al guardar el registro.";
     }
   } catch (error) {
     throw error;
   }
+}
+async function getRandomDate() {
+  const start = new Date("2023-10-01T00:00:00Z");
+  const end = new Date("2023-11-30T00:00:00Z");
+
+  const randomDate = getRandomDateBetween(start, end);
+
+  return randomDate;
+}
+function getRandomDateBetween(start, end) {
+  const differenceInMilliseconds = end.getTime() - start.getTime();
+
+  const randomNumber = Math.floor(Math.random() * differenceInMilliseconds);
+
+  const randomDate = new Date(start.getTime() + randomNumber);
+
+  return randomDate;
 }
 
 async function verificarRegistrosIP(ip) {
