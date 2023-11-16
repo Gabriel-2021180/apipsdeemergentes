@@ -52,7 +52,7 @@ exports.verReglas = async (req, res) => {
   }
 }
 
-async function determinarPersonalidad(colorFondo, colorLetra) {
+async function determinarPersonalidad(colorFondo, colorLetra, reaccion) {
   const introvertidoColoresFondo = [
     "rgb(0, 194, 222)",
     "rgb(0, 186, 113)",
@@ -79,22 +79,19 @@ async function determinarPersonalidad(colorFondo, colorLetra) {
     "rgb(250, 215, 23)"
   ];
 
+  const reaccionesIntrovertidas = ["Me da asco"];
+  const reaccionesExtrovertidas = ["Me encanta"];
+
   const esIntrovertidoFondo = introvertidoColoresFondo.includes(colorFondo);
   const esExtrovertidoFondo = extrovertidoColoresFondo.includes(colorFondo);
   const esIntrovertidoLetra = introvertidoColoresLetra.includes(colorLetra);
   const esExtrovertidoLetra = extrovertidoColoresLetra.includes(colorLetra);
+  const esReaccionIntrovertida = reaccionesIntrovertidas.includes(reaccion);
+  const esReaccionExtrovertida = reaccionesExtrovertidas.includes(reaccion);
 
-  if (esIntrovertidoFondo) {
-    // Si el color de fondo pertenece a introvertidos, se devuelve 'introvertido' independientemente del color de letra
+  if (esIntrovertidoFondo || esIntrovertidoLetra || esReaccionIntrovertida) {
     return 'introvertido';
-  } else if (esExtrovertidoFondo && !esIntrovertidoLetra) {
-    // Si el color de fondo pertenece a extrovertidos y el color de letra no pertenece a introvertidos, se devuelve 'extrovertido'
-    return 'extrovertido';
-  } else if (esIntrovertidoLetra) {
-    // Si el color de letra pertenece a introvertidos, se devuelve 'introvertido'
-    return 'introvertido';
-  } else if (esExtrovertidoLetra) {
-    // Si el color de letra pertenece a extrovertidos, se devuelve 'extrovertido'
+  } else if (esExtrovertidoFondo || esExtrovertidoLetra || esReaccionExtrovertida) {
     return 'extrovertido';
   } else {
     return 'desconocido';
