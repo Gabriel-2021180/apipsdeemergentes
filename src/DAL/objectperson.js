@@ -7,8 +7,8 @@ async function agregarDatoUsuario(
   colorfondo,
   colorLetra,
   ip,
-  personalidad,
-  sexo
+  sexo, 
+  personalidad
 ) {
   try {
     var nuevoDatoUsuario = new DatosUsuario({
