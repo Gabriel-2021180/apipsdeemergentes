@@ -54,16 +54,17 @@ exports.verReglas = async (req, res) => {
 
 async function determinarPersonalidad(colorFondo, colorLetra, reaccion) {
   const introvertidoColoresFondo = [
-    "rgb(0, 194, 222)",
-    "rgb(0, 186, 113)",
-    "rgb(95, 40, 121)"
+    "rgb(0, 194, 222)",// Un color azul verdoso claro
+    "rgb(0, 186, 113)",//Un color verde oscuro
+    "rgb(95, 40, 121)"//Un color púrpura oscuro
+
   ];
 
   const extrovertidoColoresFondo = [
-    "rgb(244, 53, 69)",
-    "rgb(250, 137, 1)",
-    "rgb(0, 65, 141)",
-    "rgb(250, 215, 23)"
+    "rgb(244, 53, 69)",// rojo brillante
+    "rgb(250, 137, 1)",//naranja
+    "rgb(0, 65, 141)",//azul oscuro
+    "rgb(250, 215, 23)"//rosa
   ];
 
   const introvertidoColoresLetra = [
