@@ -91,11 +91,19 @@ async function determinarPersonalidad(colorFondo, colorLetra, reaccion) {
 
   if (esIntrovertidoFondo || esIntrovertidoLetra || esReaccionPositiva) {
     return 'introvertido';
-  } else if (esIntrovertidoFondo || esIntrovertidoFondo || esReaccionNegativa) {
+  } else if (esIntrovertidoFondo || esIntrovertidoLetra || esReaccionNegativa) {
     return 'extrovertido';
-    } else if (esExtrovertidoFondo || esExtrovertidoFondo || esReaccionNegativa) {
+    } else if (esExtrovertidoFondo || esExtrovertidoLetra || esReaccionNegativa) {
       return 'introvertido';
-    } else if (esExtrovertidoFondo || esExtrovertidoFondo || esReaccionPositiva) {
+    } else if (esExtrovertidoFondo || esExtrovertidoLetra || esReaccionPositiva) {
+      return 'extrovertido';
+    } else if (esExtrovertidoFondo || introvertidoColoresLetra || esReaccionPositiva) {
+      return 'extrovertido';
+    } else if (esExtrovertidoFondo || introvertidoColoresLetra || esReaccionNegativa) {
+      return 'introvertido';
+    } else if (esIntrovertidoFondo || esExtrovertidoLetra || esReaccionPositiva) {
+      return 'introvertido';
+      } else if (esIntrovertidoFondo || esExtrovertidoLetra || esReaccionNegativa) {
       return 'extrovertido';
   } else {
     return 'desconocido';
