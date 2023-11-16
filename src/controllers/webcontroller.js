@@ -79,7 +79,7 @@ async function determinarPersonalidad(colorFondo, colorLetra, reaccion) {
     "rgb(250, 215, 23)"
   ];
 
-  const reaccionPositiva = "Me gusta";
+  const reaccionPositiva = "Me encanta";
   const reaccionNegativa = "Me da asco";
 
   const esIntrovertidoFondo = introvertidoColoresFondo.includes(colorFondo);
