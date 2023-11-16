@@ -22,7 +22,7 @@ exports.datosAgregados= async (req, res) => {
         ip,
         sexo,
         personalidad= await determinarPersonalidad(colorfondo,colorLetra)
-        //cantidadClicks,
+        
       );
 
       // El controlador solo necesita comprobar el mensaje de éxito
