@@ -20,7 +20,7 @@ exports.datosAgregados= async (req, res) => {
         colorLetra,
         ip,
         sexo,
-        personalidad= await determinarPersonalidad(colorfondo,colorLetra),
+        personalidad= await determinarPersonalidad(colorfondo,colorLetra, reaccion),
         
       );
       
