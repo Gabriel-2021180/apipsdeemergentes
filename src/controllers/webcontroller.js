@@ -79,20 +79,24 @@ async function determinarPersonalidad(colorFondo, colorLetra, reaccion) {
     "rgb(250, 215, 23)"
   ];
 
-  const reaccionesIntrovertidas = ["Me da asco"];
-  const reaccionesExtrovertidas = ["Me encanta"];
+  const reaccionPositiva = "Me gusta";
+  const reaccionNegativa = "Me da asco";
 
   const esIntrovertidoFondo = introvertidoColoresFondo.includes(colorFondo);
   const esExtrovertidoFondo = extrovertidoColoresFondo.includes(colorFondo);
   const esIntrovertidoLetra = introvertidoColoresLetra.includes(colorLetra);
   const esExtrovertidoLetra = extrovertidoColoresLetra.includes(colorLetra);
-  const esReaccionIntrovertida = reaccionesIntrovertidas.includes(reaccion);
-  const esReaccionExtrovertida = reaccionesExtrovertidas.includes(reaccion);
+  const esReaccionPositiva = reaccion === reaccionPositiva;
+  const esReaccionNegativa = reaccion === reaccionNegativa;
 
-  if (esIntrovertidoFondo || esIntrovertidoLetra || esReaccionIntrovertida) {
+  if (esIntrovertidoFondo || esIntrovertidoLetra || esReaccionPositiva) {
     return 'introvertido';
-  } else if (esExtrovertidoFondo || esExtrovertidoLetra || esReaccionExtrovertida) {
+  } else if (esIntrovertidoFondo || esIntrovertidoFondo || esReaccionNegativa) {
     return 'extrovertido';
+    } else if (esExtrovertidoFondo || esExtrovertidoFondo || esReaccionNegativa) {
+      return 'introvertido';
+    } else if (esExtrovertidoFondo || esExtrovertidoFondo || esReaccionPositiva) {
+      return 'extrovertido';
   } else {
     return 'desconocido';
   }
