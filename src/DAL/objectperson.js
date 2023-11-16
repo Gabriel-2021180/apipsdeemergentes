@@ -21,6 +21,8 @@ async function agregarDatoUsuario(
       personalidad
       //cantidadClicks,
     });
+
+    
     nuevoDatoUsuario.createdAt =  await getRandomDate();
 
     const resultado = await nuevoDatoUsuario.save();

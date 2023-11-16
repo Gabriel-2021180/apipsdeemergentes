@@ -9,7 +9,6 @@ exports.datosAgregados= async (req, res) => {
       colorLetra,
       ip,
       sexo,
-      //cantidadClicks,
     } = req.body;
 
     
@@ -21,10 +20,10 @@ exports.datosAgregados= async (req, res) => {
         colorLetra,
         ip,
         sexo,
-        personalidad= await determinarPersonalidad(colorfondo,colorLetra)
+        personalidad= await determinarPersonalidad(colorfondo,colorLetra),
         
       );
-
+      
       // El controlador solo necesita comprobar el mensaje de éxito
       if (resultado === '¡Registro guardado correctamente!') {
         res.json({ mensaje: resultado });
