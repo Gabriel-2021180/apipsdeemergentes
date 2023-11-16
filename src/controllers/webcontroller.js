@@ -89,21 +89,21 @@ async function determinarPersonalidad(colorFondo, colorLetra, reaccion) {
   const esReaccionPositiva = reaccion === reaccionPositiva;
   const esReaccionNegativa = reaccion === reaccionNegativa;
 
-  if (esIntrovertidoFondo || esIntrovertidoLetra || esReaccionPositiva) {
+  if (esIntrovertidoFondo && esIntrovertidoLetra && esReaccionPositiva) {
     return 'introvertido';
-  } else if (esIntrovertidoFondo || esIntrovertidoLetra || esReaccionNegativa) {
+  } else if (esIntrovertidoFondo && esIntrovertidoLetra && esReaccionNegativa) {
     return 'extrovertido';
-    } else if (esExtrovertidoFondo || esExtrovertidoLetra || esReaccionNegativa) {
+    } else if (esExtrovertidoFondo && esExtrovertidoLetra && esReaccionNegativa) {
       return 'introvertido';
-    } else if (esExtrovertidoFondo || esExtrovertidoLetra || esReaccionPositiva) {
+    } else if (esExtrovertidoFondo && esExtrovertidoLetra && esReaccionPositiva) {
       return 'extrovertido';
-    } else if (esExtrovertidoFondo || introvertidoColoresLetra || esReaccionPositiva) {
+    } else if (esExtrovertidoFondo && introvertidoColoresLetra && esReaccionPositiva) {
       return 'extrovertido';
-    } else if (esExtrovertidoFondo || introvertidoColoresLetra || esReaccionNegativa) {
+    } else if (esExtrovertidoFondo && introvertidoColoresLetra && esReaccionNegativa) {
       return 'introvertido';
-    } else if (esIntrovertidoFondo || esExtrovertidoLetra || esReaccionPositiva) {
+    } else if (esIntrovertidoFondo && esExtrovertidoLetra && esReaccionPositiva) {
       return 'introvertido';
-      } else if (esIntrovertidoFondo || esExtrovertidoLetra || esReaccionNegativa) {
+      } else if (esIntrovertidoFondo && esExtrovertidoLetra && esReaccionNegativa) {
       return 'extrovertido';
   } else {
     return 'desconocido';
