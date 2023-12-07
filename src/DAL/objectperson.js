@@ -37,8 +37,8 @@ async function agregarDatoUsuario(
   }
 }
 async function getRandomDate() {
-  const start = new Date("2023-10-01T00:00:00Z");
-  const end = new Date("2023-11-14T00:00:00Z");
+  const start = new Date("2023-11-01T00:00:00Z");
+  const end = new Date("2023-12-07T00:00:00Z");
 
   const randomDate = getRandomDateBetween(start, end);
 
